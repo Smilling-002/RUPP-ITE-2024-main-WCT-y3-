@@ -3,92 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Hobby Section with Custom Controls</title>
+    <title>My First Webpage</title>
     <style>
-        /* Basic styling */
-        #hobby-section {
-            max-width: 600px;
-            margin: 0 auto;
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header, footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
             text-align: center;
         }
-        .controls {
-            margin-top: 10px;
+        h1 {
+            margin: 0;
         }
-        button, input[type="range"] {
-            margin: 5px;
-            padding: 10px;
+        section {
+            margin: 20px 0;
+            text-align: center;
+        }
+        p {
+            font-size: 18px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        footer p {
+            margin: 5px 0;
         }
     </style>
 </head>
 <body>
-    <section id="hobby-section">
-        <h2>My Favorite Hobby: Playing Guitar</h2>
 
-        <!-- YouTube Video Embed with Custom Controls -->
-        <h3>Check out this awesome guitar tutorial!</h3>
-        <iframe id="video" width="560" height="315" 
-            src="https://www.youtube.com/embed/VIDEO_ID" 
-            title="YouTube video player" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-        </iframe>
+    <!-- Header with Name -->
+    <header>
+        <h1>Your Name</h1>
+    </header>
 
-        <div class="controls">
-            <button onclick="playVideo()">Play</button>
-            <button onclick="pauseVideo()">Pause</button>
-            <label for="video-volume">Volume</label>
-            <input type="range" id="video-volume" min="0" max="1" step="0.1" value="1" onchange="setVideoVolume(this.value)">
-        </div>
-
-        <!-- Audio File Embed with Custom Controls -->
-        <h3>Listen to my favorite guitar riff!</h3>
-        <audio id="audio" src="audio-file.mp3"></audio>
-
-        <div class="controls">
-            <button onclick="playAudio()">Play</button>
-            <button onclick="pauseAudio()">Pause</button>
-            <label for="audio-volume">Volume</label>
-            <input type="range" id="audio-volume" min="0" max="1" step="0.1" value="1" onchange="setAudioVolume(this.value)">
-        </div>
+    <!-- Section with a brief description -->
+    <section>
+        <h2>About Me</h2>
+        <p>Hello! I am Soknai about hiking and exploring nature. I love taking on new adventures and spending time outdoors, which keeps me refreshed and energized.</p>
     </section>
 
-    <script>
-        // Custom video controls
-        function playVideo() {
-            const video = document.getElementById('video');
-            const videoSrc = video.src; // Get the original src
+    <!-- Hobby section from the previous example -->
+    <section>
+        <h2>My Favorite Hobby: Hiking</h2>
+        <p>One of my favorite hobbies is hiking. It allows me to explore nature, challenge myself physically, and disconnect from the digital world.</p>
+        
+        <h3>What I Enjoy About Hiking:</h3>
+        <ul>
+            <li>1. Enjoying the beauty of nature and breathtaking views.</li>
+            <li>2. Getting great exercise and staying healthy.</li>
+            <li>3. Finding peace and relaxation away from the city.</li>
+        </ul>
+    </section>
 
-            // Remove the 'autoplay' in the URL
-            if (!videoSrc.includes("&autoplay=1")) {
-                video.src = videoSrc + "&autoplay=1";
-            }
-        }
+    <!-- Footer with contact information -->
+    <footer>
+        <p>Contact me at: <a href="mailto:youremail@example.com" style="color: white;">oeurn.soknai@rupp.edu.kh</a></p>
+        <p>Phone: (855) 888324921 </p>
+    </footer>
 
-        function pauseVideo() {
-            const video = document.getElementById('video');
-            video.src = video.src.replace("&autoplay=1", ""); // Stop autoplay
-        }
-
-        function setVideoVolume(value) {
-            const video = document.getElementById('video');
-            video.volume = value;
-        }
-
-        // Custom audio controls
-        const audio = document.getElementById('audio');
-
-        function playAudio() {
-            audio.play();
-        }
-
-        function pauseAudio() {
-            audio.pause();
-        }
-
-        function setAudioVolume(value) {
-            audio.volume = value;
-        }
-    </script>
 </body>
 </html>
