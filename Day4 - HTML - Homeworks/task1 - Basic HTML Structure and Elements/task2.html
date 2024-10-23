@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Hobby Section with Custom Controls</title>
+    <style>
+        /* Basic styling */
+        #hobby-section {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .controls {
+            margin-top: 10px;
+        }
+        button, input[type="range"] {
+            margin: 5px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <section id="hobby-section">
+        <h2>My Favorite Hobby: Playing Guitar</h2>
+
+        <!-- YouTube Video Embed with Custom Controls -->
+        <h3>Check out this awesome guitar tutorial!</h3>
+        <iframe id="video" width="560" height="315" 
+            src="https://www.youtube.com/embed/VIDEO_ID" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+        </iframe>
+
+        <div class="controls">
+            <button onclick="playVideo()">Play</button>
+            <button onclick="pauseVideo()">Pause</button>
+            <label for="video-volume">Volume</label>
+            <input type="range" id="video-volume" min="0" max="1" step="0.1" value="1" onchange="setVideoVolume(this.value)">
+        </div>
+
+        <!-- Audio File Embed with Custom Controls -->
+        <h3>Listen to my favorite guitar riff!</h3>
+        <audio id="audio" src="audio-file.mp3"></audio>
+
+        <div class="controls">
+            <button onclick="playAudio()">Play</button>
+            <button onclick="pauseAudio()">Pause</button>
+            <label for="audio-volume">Volume</label>
+            <input type="range" id="audio-volume" min="0" max="1" step="0.1" value="1" onchange="setAudioVolume(this.value)">
+        </div>
+    </section>
+
+    <script>
+        // Custom video controls
+        function playVideo() {
+            const video = document.getElementById('video');
+            const videoSrc = video.src; // Get the original src
+
+            // Remove the 'autoplay' in the URL
+            if (!videoSrc.includes("&autoplay=1")) {
+                video.src = videoSrc + "&autoplay=1";
+            }
+        }
+
+        function pauseVideo() {
+            const video = document.getElementById('video');
+            video.src = video.src.replace("&autoplay=1", ""); // Stop autoplay
+        }
+
+        function setVideoVolume(value) {
+            const video = document.getElementById('video');
+            video.volume = value;
+        }
+
+        // Custom audio controls
+        const audio = document.getElementById('audio');
+
+        function playAudio() {
+            audio.play();
+        }
+
+        function pauseAudio() {
+            audio.pause();
+        }
+
+        function setAudioVolume(value) {
+            audio.volume = value;
+        }
+    </script>
+</body>
+</html>
