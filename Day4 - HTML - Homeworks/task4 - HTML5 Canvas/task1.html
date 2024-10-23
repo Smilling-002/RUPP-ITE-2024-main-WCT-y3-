@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Drawing Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        canvas {
+            border: 1px solid #000;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Drawing on Canvas</h2>
+    <p>Below is a simple drawing of a rectangle, a circle, and a line using the HTML5 &lt;canvas&gt; element.</p>
+
+    <!-- Canvas element -->
+    <canvas id="myCanvas" width="400" height="400"></canvas>
+
+    <script>
+        // Get the canvas element and context
+        const canvas = document.getElementById('myCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Draw a rectangle
+        ctx.fillStyle = 'lightblue'; // Set fill color
+        ctx.fillRect(50, 50, 150, 100); // Draw rectangle (x, y, width, height)
+
+        // Draw a circle
+        ctx.beginPath(); // Start a new path
+        ctx.arc(250, 150, 50, 0, Math.PI * 2); // Draw circle (x, y, radius, startAngle, endAngle)
+        ctx.fillStyle = 'lightgreen'; // Set fill color for the circle
+        ctx.fill(); // Fill the circle
+
+        // Draw a line
+        ctx.beginPath(); // Start a new path
+        ctx.moveTo(50, 250); // Starting point (x, y)
+        ctx.lineTo(350, 250); // Ending point (x, y)
+        ctx.strokeStyle = 'red'; // Set the line color
+        ctx.lineWidth = 5; // Set the line width
+        ctx.stroke(); // Draw the line
+    </script>
+
+</body>
+</html>

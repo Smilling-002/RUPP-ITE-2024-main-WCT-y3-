@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Drawing App</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        #myCanvas {
+            border: 2px solid black;
+            display: block;
+            margin: 20px auto;
+        }
+        .controls {
+            margin: 10px 0;
+        }
+        .controls label {
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        input[type="color"] {
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Basic Drawing App</h2>
+    
+    <!-- Controls for color and size -->
+    <div class="controls">
+        <label for="colorPicker">Choose Color:</label>
+        <input type="color" id="colorPicker" value="#000000">
+        <label for="lineWidth">Line Width:</label>
+        <input type="range" id="lineWidth" min="1" max="20" value="2">
+        <button onclick="clearCanvas()">Clear Canvas</button>
+    </div>
+
+    <!-- Canvas element -->
+    <canvas id="myCanvas" width="600" height="400"></canvas>
+
+    <script>
+        // Get canvas and context
+        const canvas = document.getElementById('myCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Variables for drawing
+        let isDrawing = false;
+        let x = 0;
+        let y = 0;
+
+        // Get the color and line width input elements
+        const colorPicker = document.getElementById('colorPicker');
+        const lineWidthInput = document.getElementById('lineWidth');
+
+        // Function to start drawing
+        canvas.addEventListener('mousedown', (e) => {
+            x = e.offsetX;
+            y = e.offsetY;
+            isDrawing = true;
+        });
+
+        // Function to stop drawing
+        canvas.addEventListener('mouseup', () => {
+            isDrawing = false;
+            ctx.beginPath(); // Reset path to avoid connecting lines
+        });
+
+        // Function to draw on the canvas
+        canvas.addEventListener('mousemove', (e) => {
+            if (isDrawing) {
+                ctx.lineWidth = lineWidthInput.value;
+                ctx.strokeStyle = colorPicker.value;
+                ctx.lineCap = 'round'; // Makes smoother lines
+                ctx.lineJoin = 'round';
+                
+                ctx.lineTo(e.offsetX, e.offsetY);
+                ctx.stroke();
+                
+                ctx.beginPath(); // Starts a new path
+                ctx.moveTo(e.offsetX, e.offsetY);
+            }
+        });
+
+        // Function to clear the canvas
+        function clearCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+    </script>
+</body>
+</html>
