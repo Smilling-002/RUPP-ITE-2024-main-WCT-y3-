@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geolocation Example</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        #location-output {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Find Your Current Location</h2>
+    <button onclick="getLocation()">Show My Location</button>
+    
+    <!-- Location output -->
+    <div id="location-output">
+        <p id="status"></p>
+        <p><strong>Latitude:</strong> <span id="latitude"></span></p>
+        <p><strong>Longitude:</strong> <span id="longitude"></span></p>
+        <p id="map"></p>
+    </div>
+
+    <script>
+        const status = document.getElementById('status');
+        const latitude = document.getElementById('latitude');
+        const longitude = document.getElementById('longitude');
+        const map = document.getElementById('map');
+
+        // Function to get the user's location
+        function getLocation() {
+            if (navigator.geolocation) {
+                status.textContent = "Locating...";
+                navigator.geolocation.getCurrentPosition(showPosition, showError);
+            } else {
+                status.textContent = "Geolocation is not supported by this browser.";
+            }
+        }
+
+        // Function to display the position
+        function showPosition(position) {
+            status.textContent = "Location found!";
+            latitude.textContent = position.coords.latitude;
+            longitude.textContent = position.coords.longitude;
+
+            // Show Google Maps link with the coordinates
+            map.innerHTML = `<a href="https://www.google.com/maps?q=${position.coords.latitude},${position.coords.longitude}" target="_blank">
+                                View on Google Maps
+                             </a>`;
+        }
+
+        // Function to handle errors
+        function showError(error) {
+            switch (error.code) {
+                case error.PERMISSION_DENIED:
+                    status.textContent = "User denied the request for Geolocation.";
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    status.textContent = "Location information is unavailable.";
+                    break;
+                case error.TIMEOUT:
+                    status.textContent = "The request to get user location timed out.";
+                    break;
+                case error.UNKNOWN_ERROR:
+                    status.textContent = "An unknown error occurred.";
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>
