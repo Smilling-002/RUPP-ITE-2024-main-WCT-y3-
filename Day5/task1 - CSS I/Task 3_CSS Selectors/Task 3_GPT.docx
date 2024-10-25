@@ -1,0 +1,74 @@
+Types of CSS Selectors
+1.Element Selector: Selects HTML elements by their tag name, applying styles to every instance of that tag.
+2.Class Selector: Targets elements with a specific class attribute. It begins with a dot (.) and can apply styles to multiple elements.
+3.ID Selector: Targets an element with a specific id attribute. It begins with a hash (#) and is unique to one element on a page.
+4.Attribute Selector: Targets elements with specific attributes, such as [type="text"]. This selector can target elements based on any attribute, not just class or ID.
+5.Pseudo-Class Selector: Targets elements in a particular state, such as :hover for when a user hovers over an element, or :first-child to target the first child element in a parent container.
+
+Example HTML Document with Various Selectors
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors Example</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>CSS Selectors in Action</h1>
+
+    <!-- Element selector: All paragraphs -->
+    <p>This paragraph uses an element selector to apply a style.</p>
+
+    <!-- Class selector: .highlight -->
+    <p class="highlight">This paragraph uses a class selector to apply a specific style.</p>
+
+    <!-- ID selector: #unique-element -->
+    <div id="unique-element">This div uses an ID selector for unique styling.</div>
+
+    <!-- Attribute selector: [type="text"] -->
+    <input type="text" placeholder="Attribute selector example">
+
+    <!-- Pseudo-class selector: :hover -->
+    <a href="#" class="hover-link">Hover over this link to see the effect!</a>
+
+</body>
+</html>
+
+CSS Stylesheet (styles.css)
+
+/* Element Selector: Applies to all <p> elements */
+p {
+    font-size: 16px;
+    color: #333333;
+    line-height: 1.5;
+}
+
+/* Class Selector: Applies to elements with class "highlight" */
+.highlight {
+    color: darkblue;
+    font-weight: bold;
+}
+
+/* ID Selector: Applies only to the element with id="unique-element" */
+#unique-element {
+    background-color: #f0f8ff;
+    padding: 10px;
+    border: 2px solid #333333;
+    font-size: 18px;
+}
+
+/* Attribute Selector: Applies to input elements with type="text" */
+input[type="text"] {
+    padding: 5px;
+    border: 1px solid #cccccc;
+    font-size: 14px;
+}
+
+/* Pseudo-Class Selector: Applies a style when hovering over .hover-link */
+.hover-link:hover {
+    color: red;
+    text-decoration: underline;
+}

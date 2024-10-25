@@ -1,0 +1,92 @@
+1. Inline CSS
+
+Definition: Inline CSS applies styles directly within an HTML tag, using the style attribute. This method is useful for 
+quick changes to individual elements without affecting the rest of the document.
+
+Advantages:
+
+.Good for quick styling changes or when you need to apply a unique style to a single element.
+.No need to create a separate CSS file or use <style> tags.
+
+Disadvantages:
+
+.Not reusable; styles must be applied individually to each element.
+.Can make the HTML code messy and harder to read, especially with many styles.
+.Inline CSS can slow down the page if applied extensively.
+
+2. Internal CSS
+
+Definition: Internal CSS uses a <style> block within the <head> section of an HTML document. 
+This method is beneficial for single-page websites or when you want to apply styles specific to one page.
+
+Advantages:
+
+.Convenient for single-page websites since the CSS is stored within the HTML document.
+.Helps keep styles consistent across all elements on that page.
+
+Disadvantages:
+
+.Styles aren’t reusable across multiple pages; each page would need its own <style> block.
+.Increases page load time slightly since CSS is loaded with the HTML code.
+
+3. External CSS
+
+Definition: External CSS is stored in a separate .css file and linked to the HTML document using a <link> tag in the <head>. This is the preferred method for most multi-page websites.
+
+Advantages:
+
+.Keeps HTML clean and separates content from presentation.
+.Styles are reusable across multiple pages, providing consistency throughout the site.
+.Faster load times on larger websites, as the CSS file can be cached by the browser.
+
+Disadvantages:
+
+.Requires an additional HTTP request to load the CSS file.
+.If the CSS file is missing, the page loses all styling.
+
+Example HTML Page with Inline, Internal, and External CSS
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inline, Internal, and External CSS Example</title>
+    
+    <!-- Internal CSS -->
+    <style>
+        /* Internal CSS styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .internal-style {
+            color: darkgreen;
+            font-size: 20px;
+        }
+    </style>
+
+    <!-- Link to External CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1 style="color: darkblue; font-size: 36px;">This is an Inline Styled Heading</h1> <!-- Inline CSS -->
+
+    <p class="internal-style">This paragraph uses Internal CSS for styling.</p> <!-- Internal CSS applied via a class -->
+
+    <p class="external-style">This paragraph uses External CSS for styling.</p> <!-- External CSS applied via a class -->
+
+</body>
+</html>
+
+Example External CSS (styles.css)
+
+/* External CSS styling */
+.external-style {
+    color: darkred;
+    font-size: 18px;
+    text-align: center;
+}
+

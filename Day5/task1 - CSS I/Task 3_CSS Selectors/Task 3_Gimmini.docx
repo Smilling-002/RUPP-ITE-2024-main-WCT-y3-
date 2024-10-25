@@ -1,0 +1,113 @@
+CSS Selectors: Targeting Elements
+
+CSS selectors are the patterns used to identify the HTML elements that you want to style. They act like a filter, allowing you to target specific elements and apply styles to them.
+
+Here are the common types of CSS selectors:
+
+1. Element Selectors:
+
+Target elements based on their tag name.
+Example:
+
+CSS
+p {
+  color: blue;
+}
+This will style all <p> elements on the page.
+2. Class Selectors:
+
+Target elements based on a class attribute.
+Example:
+CSS
+.highlight {
+  background-color: yellow;
+}
+You can apply this class to multiple elements:
+HTML
+<p class="highlight">This paragraph is highlighted.</p>
+<div class="highlight">This div is also highlighted.</div>
+3. ID Selectors:
+
+Target a specific element based on a unique ID attribute.
+Example:
+CSS
+#title {
+  font-size: 36px;
+  font-weight: bold;
+}
+You can only use an ID once per page:
+HTML
+<h1 id="title">This is the title</h1>
+
+
+4. Attribute Selectors:
+
+Target elements based on specific attributes.
+Example:
+CSS
+a[href^="https://"] {
+  color: red;
+}
+
+
+This will style all <a> elements with an href attribute that starts with "https://".
+5. Pseudo-classes:
+
+Target elements based on their state or position in the DOM.
+Example:
+CSS
+a:hover {
+  text-decoration: underline;
+}
+This will underline all <a> elements when the mouse hovers over them.
+Example HTML Document:
+
+HTML
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Selectors Example</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1 id="title">Welcome to My Page</h1>
+  <p class="highlight">This is a highlighted paragraph.</p>
+  <p>This is a normal paragraph.</p>
+  <a href="https://www.example.com">Link to Example Website</a>
+  <div class="special">Special Div</div>
+</body>
+</html>
+CSS Stylesheet (styles.css):
+
+CSS
+/* Element Selector */
+p {
+  font-size: 16px;
+}
+
+/* Class Selector */
+.highlight {
+  background-color: yellow;
+  font-weight: bold;
+}
+
+/* ID Selector */
+#title {
+  color: blue;
+  font-size: 36px;
+}
+
+/* Attribute Selector */
+a[href^="https://"] {
+  color: red;
+}
+
+/* Pseudo-class Selector */
+a:hover {
+  text-decoration: underline;
+}
+
+/* Multiple Selectors Combined */
+.special, #title {
+  border: 2px solid black;
+}

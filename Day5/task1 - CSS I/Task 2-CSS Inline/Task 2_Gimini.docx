@@ -1,0 +1,80 @@
+Inline CSS
+
+Inline CSS is defined directly within the HTML element using the style attribute. For example:
+
+<h1 style="color: red; font-size: 24px;">Inline CSS</h1>
+
+Advantages:
+
+Simple and specific: Inline CSS is easy to implement and provides precise control over the styling of a single element.
+No additional files: Inline CSS doesn't require any external files, making it suitable for small projects or when you want to override existing styles.
+Disadvantages:
+
+Limited scope: Inline CSS styles only apply to the specific element they are defined on, making it difficult to reuse styles across multiple elements.
+Messy code: Using inline CSS can make your HTML code cluttered and difficult to maintain, especially for larger projects.
+Internal CSS
+
+Internal CSS is defined within the <head> section of an HTML document using the <style> tag. For example:
+
+HTML
+<head>
+    <style>
+        h1 {
+            color: blue;
+            font-size: 24px;
+        }
+
+        p {
+            color: green;
+            font-size: 18px;
+        }
+    </style>
+</head>
+Use code with caution.
+
+Advantages:
+
+Reusable styles: Internal CSS allows you to define styles in one place and reuse them across multiple elements within the same document.
+Cleaner code: Internal CSS helps keep your HTML code cleaner and more organized.
+Disadvantages:
+
+Limited scope: Internal CSS styles only apply to the elements within the same document. If you want to share styles across multiple pages, you need to use external CSS.
+Less maintainable: As your project grows, internal CSS can become less maintainable, especially if you have many styles defined.
+External CSS
+
+External CSS is defined in a separate file with a .css extension. The CSS file is linked to the HTML document using the <link> tag in the <head> section. For example:
+
+HTML
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
+Use code with caution.
+
+Advantages:
+
+Reusable styles: External CSS allows you to define styles in one place and reuse them across multiple pages and even multiple websites.
+Easier maintenance: External CSS makes it easier to maintain your styles, as you can modify the CSS file without having to change the HTML code.
+Scalability: External CSS is ideal for large projects with many styles, as it keeps your HTML code clean and organized.
+Disadvantages:
+
+Additional file: External CSS requires an additional file, which can slightly increase the loading time of your web page.
+Slower updates: If you make changes to your external CSS file, you need to reload the page for the changes to take effect.
+HTML Page Demonstrating All Three Methods
+
+HTML
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Styles</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1 style="color: red; font-size: 24px;">Inline CSS</h1>
+
+    <h2 style="color: green;">Internal CSS</h2>
+    <p>This is a paragraph of text.</p>
+
+    <h2>External CSS</h2>
+    <p>This is another paragraph of text.</p>
+</body>
+</html>
