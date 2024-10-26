@@ -1,0 +1,2 @@
+Google Fonts are integrated using a <link> tag in the HTML document, making it easy to use custom fonts.
+Favicons are added with a <link rel="icon"> tag in the <head>, providing an icon for browser tabs and bookmarks.

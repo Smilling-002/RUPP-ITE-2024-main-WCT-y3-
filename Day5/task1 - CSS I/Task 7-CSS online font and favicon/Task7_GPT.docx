@@ -1,0 +1,82 @@
+How to Use Google Fonts in an HTML Document
+Choose a Font:
+
+Go to Google Fonts and select a font by clicking on it. You can also customize the font’s weight and style (like bold or italic).
+Embed the Font:
+
+Once you select a font, Google Fonts will generate an HTML <link> tag or a @import rule for embedding it in CSS. The <link> tag goes in the <head> section of your HTML document.
+Use the Font in CSS:
+
+After embedding, apply the font in your CSS using font-family.
+Example Using Google Fonts:
+
+html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Fonts Example</title>
+
+    <!-- Embedding Google Font: Roboto -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Applying the Google Font */
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        h1 {
+            font-weight: 700; /* Bold style for heading */
+        }
+        p {
+            font-weight: 400; /* Regular weight for paragraph */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to My Website</h1>
+    <p>This is a paragraph styled with the Google Font Roboto.</p>
+
+</body>
+</html>
+In this example:
+
+The <link> tag imports the "Roboto" font from Google Fonts with regular and bold weights.
+In the CSS, font-family: 'Roboto', sans-serif; applies the Roboto font to all body text.
+What is a Favicon?
+A favicon is a small icon displayed in a browser’s tab next to the page title and in bookmark listings, helping users visually identify your website. Favicons are usually small (16x16 or 32x32 pixels) and should represent your brand, like a logo or a distinctive icon.
+
+Adding a Favicon to a Web Page
+To add a favicon, use the <link> tag in the <head> section of your HTML document, pointing to the icon file (usually .ico, .png, or .svg format).
+
+Example of Adding a Favicon:
+
+Create or Obtain a Favicon:
+
+Use a tool like Favicon Generator to create a favicon from an image or logo.
+Save the favicon file (e.g., favicon.ico) in your project directory.
+Link the Favicon in HTML:
+
+Use a <link> tag with the rel="icon" attribute.
+html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favicon Example</title>
+
+    <!-- Adding a Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+    <h1>Favicon and Google Fonts Example</h1>
+    <p>This example includes a favicon and a Google Font.</p>
+
+</body>
+</html>

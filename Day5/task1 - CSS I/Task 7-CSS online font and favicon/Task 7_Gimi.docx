@@ -1,0 +1,40 @@
+Online Fonts
+
+Online fonts are fonts that are hosted on a server and can be accessed and used on websites without needing to be installed locally. This allows you to use a wide variety of fonts that might not be available on every user's computer.
+
+Using Google Fonts
+
+Google Fonts is a popular service that provides a large library of free fonts. To use Google Fonts in your website:
+
+Select Fonts: Go to the Google Fonts website (fonts.google.com) and select the fonts you want to use.
+Customize Fonts: Customize the font styles, weights, and character sets as needed.
+Embed Fonts: Click the "Embed" button and copy the provided CSS code.
+Add to HTML: Paste the copied CSS code into the <head> section of your HTML document.
+Example:
+
+HTML
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Google Fonts Example</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+</head>
+<body>
+    <h1>Hello, World!</h1>
+    <p>This text is using the Roboto font.</p>
+</body>
+</html>
+
+
+Favicon
+
+A favicon is a small icon that appears in the browser's address bar or tab. It helps users identify your website and makes it more recognizable.
+
+To add a favicon to your website:
+
+Create a Favicon: Create a small image file (usually a .ico or .png file) with a size of 16x16 pixels or 32x32 pixels.
+Add to HTML: Add the following code to the <head> section of your HTML document, replacing favicon.ico with the actual filename of your favicon:
+HTML
+<head>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
