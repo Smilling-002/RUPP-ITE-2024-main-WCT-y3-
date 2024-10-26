@@ -1,0 +1,98 @@
+Applying Colors in CSS
+Hexadecimal Colors: Hex values start with a # followed by six hexadecimal digits, representing red, green, and blue values (e.g., #FF5733).
+
+Example: color: #3498db;
+RGB Colors: RGB values specify the amount of red, green, and blue in the format rgb(red, green, blue).
+
+Example: color: rgb(255, 87, 51);
+HSL Colors: HSL defines colors in terms of hue (color), saturation (intensity), and lightness (brightness).
+
+Example: color: hsl(200, 100%, 50%);
+Setting Background Properties
+Solid Color Background: Apply a single color using hex, RGB, or HSL values.
+
+Example: background-color: #333333;
+Gradient Background: Use linear or radial gradients to create smooth color transitions.
+
+Example: background: linear-gradient(to right, #ff7e5f, #feb47b);
+Image Background: Set a background image using background-image. Additional properties like background-size, background-position, and background-repeat adjust the image display.
+
+Example: background-image: url('background.jpg'); background-size: cover;
+
+Example HTML Document with CSS Colors and Backgrounds
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Colors and Backgrounds</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="solid-bg">
+        <h1>Solid Color Background</h1>
+    </header>
+
+    <section class="gradient-bg">
+        <h2>Gradient Background</h2>
+    </section>
+
+    <section class="image-bg">
+        <h2>Image Background</h2>
+        <p>This section has a background image with a dark overlay.</p>
+    </section>
+
+</body>
+</html>
+
+CSS Stylesheet (styles.css)
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* Solid Color Background */
+.solid-bg {
+    background-color: #3498db;  /* Hex color */
+    color: #ffffff;             /* Text color */
+    padding: 20px;
+    text-align: center;
+}
+
+/* Gradient Background */
+.gradient-bg {
+    background: linear-gradient(to right, rgb(255, 87, 51), rgb(255, 183, 77)); /* RGB colors */
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Image Background */
+.image-bg {
+    background-image: url('background.jpg'); 
+    background-size: cover; /* Makes the image cover the section */
+    background-position: center;
+    color: #ffffff;
+    padding: 40px;
+    text-align: center;
+    position: relative;
+}
+
+/* Overlay effect for better text visibility on the image */
+.image-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    z-index: 1;
+}
+
+.image-bg h2, .image-bg p {
+    position: relative;
+    z-index: 2;
+}

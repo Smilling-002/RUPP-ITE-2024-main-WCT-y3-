@@ -1,0 +1,87 @@
+Applying Colors and Backgrounds in CSS
+
+CSS offers a variety of ways to apply colors and backgrounds to HTML elements. Here are some common techniques:
+
+Color Properties:
+
+color: Sets the color of the text.
+background-color: Sets the background color of an element.
+Color Formats:
+
+Hexadecimal: Uses a six-digit code to represent a color (e.g., #FF0000 for red).
+RGB: Uses red, green, and blue values to represent a color (e.g., rgb(255, 0, 0) for red).
+HSL: Uses hue, saturation, and lightness to represent a color (e.g., hsl(0, 100%, 50%) for red).
+Background Properties:
+
+background-color: Sets a solid color as the background.
+background-image: Sets a background image.
+background-repeat: Controls how the background image is repeated.
+background-position: Positions the background image.
+background-size: Sets the size of the background image.
+background-attachment: Determines whether the background image is fixed or scrolls with the content.
+Example:
+
+HTML:
+
+HTML
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Color and Background Example</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="color-example">
+        <p>Hexadecimal Color: #FF0000</p>
+        <p>RGB Color: rgb(0, 0, 255)</p>
+        <p>HSL Color: hsl(120, 100%, 50%)</p>
+    </div>
+    <div class="background-example">
+        <p>Solid Color Background</p>
+        <p>Gradient Background</p>
+        <p>Image Background</p>
+    </div>
+</body>
+</html>
+Use code with caution.
+
+CSS:
+
+CSS
+.color-example p {
+    padding: 10px;
+}
+
+.color-example p:nth-child(1) {
+    background-color: #FF0000;
+    color: white;
+}
+
+.color-example p:nth-child(2) {
+    background-color: rgb(0, 0, 255);
+    color: white;
+}
+
+.color-example p:nth-child(3) {
+    background-color: hsl(120, 100%, 50%);
+    color: white;
+}
+
+.background-example p {
+    padding: 20px;
+    text-align: center;
+}
+
+.background-example p:nth-child(1) {
+    background-color: lightblue;
+}
+
+.background-example p:nth-child(2) {
+    background-image: linear-gradient(to right, red, yellow);
+}
+
+.background-example p:nth-child(3) {
+    background-image: url('background-image.jpg');
+    background-size: cover;
+    background-position: center;
+}
