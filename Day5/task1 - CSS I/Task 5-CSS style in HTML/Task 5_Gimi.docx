@@ -1,0 +1,18 @@
+Applying Styles Directly to HTML Elements
+
+You can apply styles directly to HTML elements using the style attribute. This attribute allows you to specify CSS properties and their values within the HTML element itself.
+
+Example:
+
+HTML
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inline Styles Example</title>
+</head>
+<body>
+    <h1 style="color: blue; font-size: 36px;">Hello, World!</h1>
+    <p style="font-family: Arial, sans-serif; font-size: 18px;">This is a paragraph with inline styles.</p>
+</body>
+</html>
+

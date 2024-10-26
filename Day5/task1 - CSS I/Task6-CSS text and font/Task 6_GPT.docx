@@ -1,0 +1,79 @@
+Key CSS Text and Font Properties
+font-family: Defines the typeface of the text. You can specify multiple fonts as a "fallback stack" in case a specific font is unavailable on the user’s system.
+
+Example: font-family: Arial, sans-serif;
+font-size: Sets the size of the text. You can use values in pixels (px), ems (em), rems (rem), or percentages.
+
+Example: font-size: 18px;
+font-weight: Controls the thickness or "weight" of the font, like normal, bold, lighter, or numeric values from 100 to 900.
+
+Example: font-weight: bold;
+text-align: Aligns the text within its containing element, such as left, center, right, or justify.
+
+Example: text-align: center;
+color: Sets the color of the text using color names, hex values, RGB, or other CSS color formats.
+
+Example: color: #333333;
+Example HTML Document with Styled Text and Fonts
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text and Font Styling Example</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>Main Heading</h1>
+    <h2>Subheading</h2>
+
+    <p>This is a paragraph styled with a specific font size, weight, and color. CSS makes it easy to control the look and feel of text on the web.</p>
+
+    <a href="#" class="link">This is a styled link</a>
+
+</body>
+</html>
+CSS Stylesheet (styles.css)
+/* Styles for the main heading */
+h1 {
+    font-family: Arial, sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    color: darkblue;
+}
+
+/* Styles for the subheading */
+h2 {
+    font-family: Georgia, serif;
+    font-size: 28px;
+    font-weight: normal;
+    text-align: left;
+    color: #666;
+}
+
+/* Styles for the paragraph */
+p {
+    font-family: 'Verdana', sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.6;
+    color: #333333;
+    text-align: justify;
+}
+
+/* Styles for the link */
+.link {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.link:hover {
+    color: #388E3C;
+    text-decoration: underline;
+}

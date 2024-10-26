@@ -1,0 +1,26 @@
+How to Apply Inline Styles
+To apply an inline style, add the style attribute to the HTML element and include CSS properties within it. Multiple CSS properties can be added by separating them with semicolons.
+
+<p style="color: blue; font-size: 18px;">This is styled using inline CSS.</p>
+
+Example HTML Document with Inline Styles
+Here’s a simple HTML document that demonstrates inline styling on specific elements:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inline Styling Example</title>
+</head>
+<body>
+
+    <h1 style="color: darkgreen; text-align: center;">Welcome to My Page</h1>
+    
+    <p style="font-size: 16px; line-height: 1.5; color: #333;">This paragraph uses inline styles to set font size, line height, and color.</p>
+
+    <button style="background-color: #4CAF50; color: white; padding: 10px 20px; border: none;">Click Me</button>
+
+</body>
+</html>
+

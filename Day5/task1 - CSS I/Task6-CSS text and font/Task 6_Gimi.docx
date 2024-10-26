@@ -1,0 +1,69 @@
+Styling Text and Fonts in CSS
+
+CSS provides a rich set of properties to style text and fonts on web pages. Here are some of the most commonly used properties:
+
+Font Properties:
+
+.font-family: Specifies the font family to use for the text.
+.font-size: Sets the size of the font.
+.font-weight: Defines the weight or boldness of the font.
+.font-style: Sets the font style, such as italic or oblique.
+
+Text Properties:
+
+.text-align: Aligns the text within its container (left, right, center, justify).
+.text-decoration: Adds decorations to the text, such as underline or strikethrough.
+.text-transform: Changes the case of the text (uppercase, lowercase, capitalize).
+.color: Sets the color of the text.
+Example HTML and CSS:
+
+HTML:
+
+HTML
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text and Font Styling</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <p>This is a paragraph of text.</p>
+    <a href="https://example.com">Link to Example Website</a>
+</body>
+</html>
+
+
+CSS:
+
+CSS
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+a {
+    color: blue;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
