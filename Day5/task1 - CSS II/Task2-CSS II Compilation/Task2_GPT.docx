@@ -1,0 +1,53 @@
+How CSS Compilation Works with Preprocessors
+CSS preprocessors, such as Sass or LESS, take in the preprocessor code containing features like variables,
+ nesting, mixins, and functions. This code is then run through a compiler that outputs a CSS file, which browsers can read.
+  Developers usually compile the preprocessor files either manually (with command-line tools) or automatically 
+  (with task runners like Gulp or build tools like Webpack).
+
+Steps for Compiling Sass to CSS
+1.Write Sass/SCSS code: The developer writes styles using Sass syntax, taking advantage of features like variables, nesting, and mixins.
+2.Run the Compiler: Use the Sass command-line tool or a build tool to compile the .scss file. This command outputs a .css file.
+3.Include Compiled CSS in Project: Link the generated .css file in the HTML file, allowing the browser to render the styles.
+
+Sass Compilation Command
+To compile a .scss file to CSS, use the following command in the terminal:
+
+sass input.scss output.css
+
+This command takes input.scss and compiles it into output.css. Many development environments can also automate this process, recompiling the CSS whenever changes are made to the Sass files.
+
+Example of Sass Code and Compiled CSS Output
+Original Sass (SCSS) Code
+
+// Variables
+$primary-color: #3498db;
+$font-size: 16px;
+
+// Mixin
+@mixin border-radius($radius) {
+    border-radius: $radius;
+}
+
+.button {
+    color: $primary-color;
+    font-size: $font-size;
+    padding: 10px 15px;
+    @include border-radius(5px);
+
+    &:hover {
+        background-color: darken($primary-color, 10%);
+    }
+}
+
+Compiled CSS Output
+.button {
+    color: #3498db;
+    font-size: 16px;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background-color: #2a80b9; /* Darkened version of primary color */
+}
+

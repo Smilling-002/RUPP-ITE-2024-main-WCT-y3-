@@ -1,0 +1,90 @@
+Using Variables and Functions in Sass
+Variables in Sass are used to store reusable values like colors, font sizes, or dimensions, allowing easy updates and consistent styling across the project. Functions in Sass, similar to functions in programming, perform calculations or return values based on inputs, adding flexibility to the styling process.
+
+Declaring a Variable and Function in Sass
+
+1.Variable Declaration: Variables are defined with the $ symbol.
+
+// Variable declaration
+$primary-color: #3498db;
+$font-size-large: 18px;
+$padding: 10px;
+
+2.Function Declaration: Functions in Sass are defined with @function, and they allow custom logic to be reused throughout the code.
+// Function declaration
+@function calculate-rem($size) {
+    $base-size: 16px;
+    @return $size / $base-size * 1rem;
+}
+
+3.Using Variables and Functions in Sass:
+
+scss
+.header {
+    background-color: $primary-color;
+    font-size: $font-size-large;
+    padding: $padding;
+
+    h1 {
+        font-size: calculate-rem(24px);
+    }
+}
+
+Compiled CSS Output
+The code above compiles into the following CSS:
+.header {
+    background-color: #3498db;
+    font-size: 18px;
+    padding: 10px;
+}
+
+.header h1 {
+    font-size: 1.5rem; /* Result of 24px / 16px */
+}
+
+Inheritance in Sass
+Inheritance in Sass is a feature that allows one selector to inherit the styles of another selector using the @extend directive. This approach promotes code reuse and reduces redundancy, especially for shared styling across elements.
+
+For instance, if multiple elements share certain styles, we can create a base class and extend it where needed.
+
+Example of Inheritance
+// Base class with common styles
+%common-styles {
+    color: #333;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+// Extending the base class
+.button {
+    @extend %common-styles;
+    background-color: $primary-color;
+    text-align: center;
+}
+
+.alert {
+    @extend %common-styles;
+    background-color: #e74c3c;
+    color: white;
+}
+
+Compiled CSS Output
+This Sass code compiles to:
+.button, .alert {
+    color: #333;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.button {
+    background-color: #3498db;
+    text-align: center;
+}
+
+.alert {
+    background-color: #e74c3c;
+    color: white;
+}
+
