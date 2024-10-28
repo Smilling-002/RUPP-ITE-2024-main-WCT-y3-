@@ -1,0 +1,110 @@
+The CSS Grid System is a layout system that divides a page into a series of rows and columns, making it easier to create responsive, flexible layouts. Grid-based layouts allow content to be organized into specific sections and make it possible to control how elements align and scale across different screen sizes.
+
+Implementing CSS Grid System with Pure CSS
+The CSS Grid module allows us to create complex, responsive layouts by defining a grid container and setting the number of rows and columns.
+
+Basic Structure of a CSS Grid
+Grid Container: A container with display: grid; that defines rows and columns.
+Grid Tracks: Defined columns and rows in the grid.
+Grid Items: Elements placed within the grid container that are aligned or spanned across rows and columns.
+Example Layout Using Pure CSS Grid
+The following example demonstrates a simple responsive grid layout using CSS Grid.
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive CSS Grid Layout</title>
+    <style>
+        /* Grid Container */
+        .grid-container {
+            display: grid;
+            gap: 10px;
+            padding: 20px;
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        /* Grid Items */
+        .grid-item {
+            background-color: #3498db;
+            color: white;
+            padding: 20px;
+            font-size: 1.2em;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        /* Media Queries for Breakpoints */
+        @media (min-width: 600px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 992px) {
+            .grid-container {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="grid-item">Item 1</div>
+        <div class="grid-item">Item 2</div>
+        <div class="grid-item">Item 3</div>
+        <div class="grid-item">Item 4</div>
+        <div class="grid-item">Item 5</div>
+        <div class="grid-item">Item 6</div>
+    </div>
+</body>
+</html>
+Explanation of the CSS Grid Layout
+Grid Template Columns:
+
+grid-template-columns: repeat(1, 1fr); defines a single column (on smaller screens).
+Media queries adjust the layout at larger breakpoints to display multiple columns.
+Media Queries:
+
+@media (min-width: 600px): On screens 600px and larger, the layout switches to a two-column grid.
+@media (min-width: 992px): On screens 992px and larger, the layout switches to a four-column grid.
+These breakpoints adjust the number of columns based on screen size, making the layout responsive.
+Implementing Grid System with Bootstrap
+Bootstrap’s grid system is a responsive, 12-column grid that uses predefined classes to create flexible layouts across screen sizes.
+
+Example Layout Using Bootstrap Grid
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Responsive Layout</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-3">Item 1</div>
+            <div class="col-12 col-md-6 col-lg-3">Item 2</div>
+            <div class="col-12 col-md-6 col-lg-3">Item 3</div>
+            <div class="col-12 col-md-6 col-lg-3">Item 4</div>
+        </div>
+    </div>
+</body>
+</html>
+Explanation of Bootstrap Grid Classes
+.container: Centers and adds padding to the grid layout.
+.row: Creates a horizontal row for grid columns.
+Column Classes:
+.col-12: Sets each column to 12/12 (100%) width on extra small screens.
+.col-md-6: Sets each column to 6/12 (50%) width on medium screens (768px and larger).
+.col-lg-3: Sets each column to 3/12 (25%) width on large screens (992px and larger).
+Breakpoints in CSS and Bootstrap
+Media Queries in CSS: Manually-defined media queries, as shown in the CSS Grid example, allow flexible control over layout at specific breakpoints.
+Responsive Classes in Bootstrap: Bootstrap’s grid includes predefined responsive classes for different screen sizes, simplifying the implementation of breakpoints.

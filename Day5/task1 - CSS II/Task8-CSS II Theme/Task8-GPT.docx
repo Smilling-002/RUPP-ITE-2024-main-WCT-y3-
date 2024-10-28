@@ -1,0 +1,234 @@
+The CSS Grid System is a layout system that divides a page into a series of rows and columns, making it easier to create responsive, flexible layouts. Grid-based layouts allow content to be organized into specific sections and make it possible to control how elements align and scale across different screen sizes.
+
+Implementing CSS Grid System with Pure CSS
+The CSS Grid module allows us to create complex, responsive layouts by defining a grid container and setting the number of rows and columns.
+
+Basic Structure of a CSS Grid
+Grid Container: A container with display: grid; that defines rows and columns.
+Grid Tracks: Defined columns and rows in the grid.
+Grid Items: Elements placed within the grid container that are aligned or spanned across rows and columns.
+Example Layout Using Pure CSS Grid
+The following example demonstrates a simple responsive grid layout using CSS Grid.
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive CSS Grid Layout</title>
+    <style>
+        /* Grid Container */
+        .grid-container {
+            display: grid;
+            gap: 10px;
+            padding: 20px;
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        /* Grid Items */
+        .grid-item {
+            background-color: #3498db;
+            color: white;
+            padding: 20px;
+            font-size: 1.2em;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        /* Media Queries for Breakpoints */
+        @media (min-width: 600px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 992px) {
+            .grid-container {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="grid-item">Item 1</div>
+        <div class="grid-item">Item 2</div>
+        <div class="grid-item">Item 3</div>
+        <div class="grid-item">Item 4</div>
+        <div class="grid-item">Item 5</div>
+        <div class="grid-item">Item 6</div>
+    </div>
+</body>
+</html>
+Explanation of the CSS Grid Layout
+Grid Template Columns:
+
+grid-template-columns: repeat(1, 1fr); defines a single column (on smaller screens).
+Media queries adjust the layout at larger breakpoints to display multiple columns.
+Media Queries:
+
+@media (min-width: 600px): On screens 600px and larger, the layout switches to a two-column grid.
+@media (min-width: 992px): On screens 992px and larger, the layout switches to a four-column grid.
+These breakpoints adjust the number of columns based on screen size, making the layout responsive.
+Implementing Grid System with Bootstrap
+Bootstrap’s grid system is a responsive, 12-column grid that uses predefined classes to create flexible layouts across screen sizes.
+
+Example Layout Using Bootstrap Grid
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Responsive Layout</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-3">Item 1</div>
+            <div class="col-12 col-md-6 col-lg-3">Item 2</div>
+            <div class="col-12 col-md-6 col-lg-3">Item 3</div>
+            <div class="col-12 col-md-6 col-lg-3">Item 4</div>
+        </div>
+    </div>
+</body>
+</html>
+Explanation of Bootstrap Grid Classes
+.container: Centers and adds padding to the grid layout.
+.row: Creates a horizontal row for grid columns.
+Column Classes:
+.col-12: Sets each column to 12/12 (100%) width on extra small screens.
+.col-md-6: Sets each column to 6/12 (50%) width on medium screens (768px and larger).
+.col-lg-3: Sets each column to 3/12 (25%) width on large screens (992px and larger).
+Breakpoints in CSS and Bootstrap
+Media Queries in CSS: Manually-defined media queries, as shown in the CSS Grid example, allow flexible control over layout at specific breakpoints.
+Responsive Classes in Bootstrap: Bootstrap’s grid includes predefined responsive classes for different screen sizes, simplifying the implementation of breakpoints.
+Using grid systems and breakpoints in both CSS and frameworks like Bootstrap makes responsive layouts more manageable and adaptable across various screen sizes, ensuring a consistent user experience.
+
+
+
+
+
+
+You said:
+Task 8: Theme
+
+**Prompt:**
+
+"What is theming in CSS, and how can it be implemented using Sass? Create a simple theme switcher that allows users to
+toggle between a light and dark theme. Provide examples of the Sass code used for both themes and explain how variables
+can be utilized to manage theme styles.
+ChatGPT said:
+ChatGPT
+Theming in CSS refers to creating multiple visual styles for a website, often switching between themes like "light" and "dark." This is commonly achieved using CSS variables or preprocessors like Sass, allowing designers to control elements like colors, fonts, and backgrounds globally. By defining theme-specific variables, Sass makes it easy to create consistent styles that can be applied across an entire site with minimal CSS updates.
+
+Implementing Theming with Sass
+In Sass, we can use variables to store color values and other theme-related styles, switching between them based on the active theme.
+
+Step 1: Define Themes Using Variables in Sass
+In the Sass code below, we define variables for both light and dark themes. By using mixins and classes, we can easily apply the selected theme styles throughout the site.
+
+Sass Code for Light and Dark Themes
+scss
+Copy code
+// Theme variables
+
+// Light theme variables
+$light-bg-color: #ffffff;
+$light-text-color: #333333;
+$light-accent-color: #3498db;
+
+// Dark theme variables
+$dark-bg-color: #333333;
+$dark-text-color: #ffffff;
+$dark-accent-color: #e67e22;
+
+// Mixin for setting theme styles
+@mixin theme($bg-color, $text-color, $accent-color) {
+    background-color: $bg-color;
+    color: $text-color;
+
+    a {
+        color: $accent-color;
+        &:hover {
+            color: lighten($accent-color, 10%);
+        }
+    }
+}
+
+// Light theme class
+.light-theme {
+    @include theme($light-bg-color, $light-text-color, $light-accent-color);
+}
+
+// Dark theme class
+.dark-theme {
+    @include theme($dark-bg-color, $dark-text-color, $dark-accent-color);
+}
+Step 2: HTML Structure for Theme Switcher
+To implement the theme toggle, we can use JavaScript to switch between .light-theme and .dark-theme classes on the root <body> element.
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Switcher Example</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="light-theme">
+    <header>
+        <h1>Welcome to the Themed Page</h1>
+        <button id="theme-toggle">Toggle Theme</button>
+    </header>
+    <main>
+        <p>This is a sample paragraph. Click the button to switch themes!</p>
+        <a href="#">Sample Link</a>
+    </main>
+
+    <script>
+        const toggleButton = document.getElementById("theme-toggle");
+        toggleButton.addEventListener("click", () => {
+            document.body.classList.toggle("light-theme");
+            document.body.classList.toggle("dark-theme");
+        });
+    </script>
+</body>
+</html>
+Compiled CSS Output
+After compiling the Sass code, the output CSS would look like this:
+
+css
+Copy code
+.light-theme {
+    background-color: #ffffff;
+    color: #333333;
+}
+
+.light-theme a {
+    color: #3498db;
+}
+
+.light-theme a:hover {
+    color: #5dade2;
+}
+
+.dark-theme {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.dark-theme a {
+    color: #e67e22;
+}
+
+.dark-theme a:hover {
+    color: #ea8f44;
+}
