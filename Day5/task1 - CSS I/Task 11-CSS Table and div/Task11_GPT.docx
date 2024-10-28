@@ -1,0 +1,122 @@
+n HTML and CSS, both tables and <div> elements can be used to organize and present content, but they have different intended purposes and use cases.
+
+Tables are designed specifically for displaying tabular data in rows and columns. Using tables for layout is discouraged, as they are rigid and not well-suited for responsive design.
+<div> elements are generic containers that, with the help of CSS, offer greater flexibility for modern web layouts. <div> elements can be styled with CSS to create responsive, dynamic layouts.
+
+Example HTML Document with Table and <div> Elements
+Here is an example document that demonstrates how both tables and <div> elements can be used to structure content.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tables vs. Div Layout Example</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Table Example for Tabular Data -->
+    <section class="data-table">
+        <h2>Product Pricing Table</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Apples</td>
+                    <td>$1.00</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>Bananas</td>
+                    <td>$0.50</td>
+                    <td>150</td>
+                </tr>
+                <tr>
+                    <td>Cherries</td>
+                    <td>$3.00</td>
+                    <td>75</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Div Layout Example for Flexible Layout -->
+    <section class="div-layout">
+        <h2>Div Layout Section</h2>
+        <div class="box box1">Content Box 1</div>
+        <div class="box box2">Content Box 2</div>
+        <div class="box box3">Content Box 3</div>
+    </section>
+
+</body>
+</html>
+
+CSS Stylesheet (styles.css)
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f1f1f1;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Table Styling */
+.data-table h2 {
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: white;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background-color: #3498db;
+    color: white;
+}
+
+/* Div Layout Styling */
+.div-layout {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.box {
+    padding: 20px;
+    color: white;
+    font-size: 1.2em;
+    text-align: center;
+    width: 150px;
+    background-color: #3498db;
+}
+
+.box1 {
+    background-color: #e74c3c;
+}
+
+.box2 {
+    background-color: #2ecc71;
+}
+
+.box3 {
+    background-color: #9b59b6;
+}

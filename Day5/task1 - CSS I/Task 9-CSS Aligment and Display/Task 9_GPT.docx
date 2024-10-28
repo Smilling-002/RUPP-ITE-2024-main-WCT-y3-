@@ -1,0 +1,110 @@
+Key Display Properties in CSS
+1,block: Elements with display: block; take up the full width of their container and start on a new line. Common block elements are <div>, <p>, and <h1>.
+
+.Example: display: block;
+2.inline: Elements with display: inline; only take up as much space as their content and allow other elements to sit alongside them. Inline elements include <span>, <a>, and <img>.
+
+.Example: display: inline;
+3.inline-block: Combines features of both block and inline. Elements with display: inline-block; don’t start on a new line but can have padding, margin, and set dimensions.
+
+.Example: display: inline-block;
+4. flex: Elements with display: flex; make their children flexible items within a container, allowing control over alignment, direction, and spacing.
+
+.Example: display: flex;
+
+Common CSS Alignment Techniques
+1.Text Alignment: Aligns text horizontally within its container using text-align (e.g., left, center, right).
+
+Example: text-align: center;
+2.Vertical Alignment: Aligns inline elements vertically using vertical-align (e.g., top, middle, bottom) and is often used with inline or inline-block elements.
+
+Example: vertical-align: middle;
+3.Flexbox Alignment: Flexbox makes it easy to align items horizontally and vertically using properties like justify-content and align-items.
+
+Example HTML Document with CSS Alignments and Display Properties
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Alignment and Display Example</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1 class="center-text">CSS Alignment and Display Properties</h1>
+    </header>
+
+    <!-- Block vs. Inline vs. Inline-Block Elements -->
+    <section class="display-types">
+        <div class="block-element">Block Element</div>
+        <span class="inline-element">Inline Element</span>
+        <span class="inline-element">Another Inline Element</span>
+        <div class="inline-block-element">Inline-Block Element</div>
+    </section>
+
+    <!-- Flexbox Container for Alignment -->
+    <section class="flexbox-container">
+        <div class="flex-item">Item 1</div>
+        <div class="flex-item">Item 2</div>
+        <div class="flex-item">Item 3</div>
+    </section>
+
+</body>
+</html>
+CSS Stylesheet (styles.css)
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Center-align text */
+.center-text {
+    text-align: center;
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+/* Block, Inline, and Inline-Block Display */
+.block-element {
+    display: block;
+    width: 100%;
+    background-color: #3498db;
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.inline-element {
+    display: inline;
+    background-color: #2ecc71;
+    color: white;
+    padding: 5px;
+}
+
+.inline-block-element {
+    display: inline-block;
+    width: 150px;
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px;
+    margin: 5px;
+}
+
+/* Flexbox Alignment */
+.flexbox-container {
+    display: flex;
+    justify-content: space-around; /* Horizontal alignment */
+    align-items: center; /* Vertical alignment */
+    background-color: #f1f1f1;
+    padding: 20px;
+}
+
+.flex-item {
+    background-color: #9b59b6;
+    color: white;
+    padding: 20px;
+    width: 100px;
+    text-align: center;
+}

@@ -1,0 +1,2 @@
+Summary
+Flexbox makes it easy to create responsive layouts, adjusting the placement and alignment of items without complex CSS. It’s especially useful for dynamic, modern designs where items need to adapt across screen sizes. By changing justify-content, align-items, and flex-direction, Flexbox provides a powerful, flexible system for arranging elements effectively.

@@ -1,0 +1,6 @@
+The display property defines how 
+elements behave in a layout, while alignment properties 
+like text-align, vertical-align, and Flexbox’s alignment options help 
+you arrange elements within containers. Combining these properties helps
+ create dynamic and visually
+ appealing web layouts that adapt to content needs and user interactions.

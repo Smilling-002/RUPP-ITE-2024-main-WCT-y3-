@@ -1,0 +1,97 @@
+Key Flexbox Properties
+Flexbox works through a flex container and its flex items. Setting display: flex; on a container enables Flexbox, allowing you to control its children with flex properties.
+
+1. justify-content: Controls horizontal alignment of items within the flex container.
+Values include flex-start, center, flex-end, space-between, space-around, and space-evenly.
+Example: justify-content: center; centers items horizontally within the container.
+2. align-items: Controls vertical alignment of items within the container.
+Values include flex-start, center, flex-end, stretch, and baseline.
+Example: align-items: center; vertically centers items within the container.
+3. flex-direction: Defines the direction in which items are placed within the container.
+Options include row (default), row-reverse, column, and column-reverse.
+Example: flex-direction: column; arranges items vertically.
+Example HTML Document with a Responsive Flexbox Layout
+Here’s an example demonstrating a responsive Flexbox layout. This design adjusts based on screen size, displaying items in a row on large screens and in a column on smaller screens.
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Flexbox Layout</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="header">
+        <h1>Responsive Flexbox Layout</h1>
+    </header>
+
+    <main class="flex-container">
+        <section class="flex-item">Item 1</section>
+        <section class="flex-item">Item 2</section>
+        <section class="flex-item">Item 3</section>
+        <section class="flex-item">Item 4</section>
+    </main>
+
+</body>
+</html>
+CSS Stylesheet (styles.css)
+css
+Copy code
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f1f1f1;
+}
+
+.header {
+    text-align: center;
+    background-color: #3498db;
+    color: white;
+    padding: 20px;
+    width: 100%;
+}
+
+h1 {
+    margin: 0;
+}
+
+/* Flex Container Styling */
+.flex-container {
+    display: flex;
+    justify-content: space-around; /* Even space around items */
+    align-items: center;           /* Vertically center items */
+    flex-wrap: wrap;               /* Allow items to wrap to new lines */
+    padding: 20px;
+    max-width: 1200px;
+    width: 100%;
+    background-color: #ffffff;
+}
+
+/* Flex Items Styling */
+.flex-item {
+    background-color: #e74c3c;
+    color: white;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design: Stack items vertically on smaller screens */
+@media (max-width: 768px) {
+    .flex-container {
+        flex-direction: column; /* Stack items vertically */
+        align-items: stretch;   /* Make items full-width */
+    }
+}

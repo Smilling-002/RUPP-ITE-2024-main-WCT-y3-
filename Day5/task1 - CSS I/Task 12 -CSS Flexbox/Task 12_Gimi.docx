@@ -1,0 +1,64 @@
+Flexbox: A Powerful Layout Tool
+
+Flexbox, or Flexible Box Layout, is a CSS layout model designed to make it easier to create flexible and responsive layouts. It allows you to arrange items in a row or column and easily adjust their size and alignment.
+
+Key Flexbox Properties:
+
+display: flex;: Turns an element into a flex container.
+flex-direction: Determines the main axis of the container (row or column).
+flex-direction: row; (default)
+flex-direction: column;
+justify-content: Aligns items along the main axis.
+justify-content: flex-start;
+justify-content: flex-end;
+justify-content: center;
+justify-content: space-between;
+justify-content: space-around;
+align-items: Aligns items along the cross axis.
+align-items: flex-start;
+align-items: flex-end;
+align-items: center;
+align-items: stretch; (default)
+Example: Responsive Layout with Flexbox
+
+HTML:
+
+HTML
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flexbox Layout</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+    </div>
+</body>
+</html>
+Use code with caution.
+
+CSS:
+
+CSS
+.container {
+    display: flex;
+    flex-direction: row; /* Default: row */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item {
+    background-color: lightblue;
+    padding: 20px;
+    border: 1px solid black;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Change to column layout for smaller screens */
+    }
+}
