@@ -1,5 +1,0 @@
-How CSS Variables Work
-1.Declaration: CSS variables are defined within a CSS selector (often :root to make them globally accessible).
-2.Usage: Once declared, the variable can be referenced anywhere in the stylesheet using var(--variable-name).
-3.Dynamic Updates: Updating the variable value at one place in the stylesheet will automatically update all instances of that variable.
-Example: Using CSS Variables

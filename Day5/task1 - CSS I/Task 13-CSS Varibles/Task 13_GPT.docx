@@ -1,0 +1,87 @@
+CSS variables, also known as custom properties, allow you to define reusable values in a stylesheet. This helps maintain consistency, simplifies updates, and makes it easier to apply a uniform design across a website. CSS variables are declared using -- followed by a custom name, and they can be used with the var() function. CSS variables are particularly useful for values that are likely to be repeated or changed, such as colors, font sizes, and spacing.
+
+How CSS Variables Work
+Declaration: CSS variables are defined within a CSS selector (often :root to make them globally accessible).
+Usage: Once declared, the variable can be referenced anywhere in the stylesheet using var(--variable-name).
+Dynamic Updates: Updating the variable value at one place in the stylesheet will automatically update all instances of that variable.
+
+Example: Using CSS Variables
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Variables Example</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="header">
+        <h1>Welcome to Our Site</h1>
+    </header>
+
+    <main class="content">
+        <p>This website uses CSS variables to maintain consistent styles.</p>
+    </main>
+
+</body>
+</html>
+
+CSS Code (styles.css)
+/* Define CSS Variables */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --text-color: #333333;
+    --header-font-size: 2em;
+    --paragraph-font-size: 1em;
+    --padding: 20px;
+}
+
+/* Use Variables for Consistent Styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: var(--text-color);
+}
+
+.header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: var(--padding);
+    text-align: center;
+    font-size: var(--header-font-size);
+}
+
+.content {
+    padding: var(--padding);
+    background-color: var(--secondary-color);
+    color: white;
+    font-size: var(--paragraph-font-size);
+}
+
+Explanation of the CSS Code
+Define Variables in :root:
+
+:root is a special selector that represents the document’s root (or html element), allowing variables to be accessed globally.
+Variables are prefixed with -- (e.g., --primary-color: #3498db;), giving them a unique name and value.
+Using Variables:
+
+var(--variable-name) is used to insert the variable value wherever needed.
+For example, background-color: var(--primary-color); applies the --primary-color value to the .header background.
+Changing Variable Values:
+
+If the --primary-color is changed in the :root section, every instance using var(--primary-color) will automatically update to reflect this new color.
+Example of Changing Variable Values
+If you modify the --primary-color to a new color, like #e74c3c, it will automatically update all elements using this variable.
+
+css
+Copy code
+:root {
+    --primary-color: #e74c3c; /* Updated color */
+    --secondary-color: #2ecc71;
+    --text-color: #333333;
+    --header-font-size: 2em;
+    --paragraph-font-size: 1em;
+    --padding: 20px;
+}

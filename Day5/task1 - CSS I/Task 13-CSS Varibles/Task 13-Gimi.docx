@@ -1,0 +1,59 @@
+CSS Variables (Custom Properties)
+
+CSS variables, also known as custom properties, allow you to define reusable values that can be used throughout your stylesheet. This helps you maintain consistency and make changes more efficiently.   
+
+How to Define and Use CSS Variables:
+
+Define the Variable:
+You define a variable using the -- syntax. For example:
+:root {
+    --primary-color: #336699;
+    --secondary-color: #f2f2f2;
+    --font-size: 16px;
+}
+2.Use the Variable:
+To use a variable, you reference it using the var() function. For example:
+
+CSS
+body {
+    background-color: var(--secondary-color);
+    font-size: var(--font-size);
+}
+
+h1 {
+    color: var(--primary-color);
+}
+Example: Changing Variable Values
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Variables Example</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Hello, World!</h1>
+    <p>This is a paragraph.</p>
+</body>
+</html>
+
+CSS
+:root {
+    --primary-color: #336699;
+    --secondary-color: #f2f2f2;
+    --font-size: 16px;
+}
+
+body {
+    background-color: var(--secondary-color);
+    font-size: var(--font-size);
+}
+
+h1 {
+    color: var(--primary-color);
+    font-size: 2em;
+}
+
+/* To change the primary color: */
+:root {
+    --primary-color: red;
+}

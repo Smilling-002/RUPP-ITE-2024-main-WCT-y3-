@@ -1,0 +1,13 @@
+How CSS Variables Work
+1.Declaration: CSS variables are defined within a CSS selector (often :root to make them globally accessible).
+2.Usage: Once declared, the variable can be referenced anywhere in the stylesheet using var(--variable-name).
+3.Dynamic Updates: Updating the variable value at one place in the stylesheet will automatically update all instances of that variable.
+Example: Using CSS Variables
+
+Benefits of CSS Variables:
+
+Consistency: Ensures consistent styling throughout your website.
+Efficiency: Makes it easier to change the overall look and feel of your website by modifying a few variables.
+Maintainability: Improves code readability and maintainability.
+Theming: Can be used to create different themes for your website.
+By effectively using CSS variables, you can create more flexible, maintainable, and visually appealing websites.
