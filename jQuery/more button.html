@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Change Color Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px; /* Add some space above each button */
+        }
+    </style>
+</head>
+<body>
+
+<h1>Welcome to jQuery Color Change Example</h1>
+
+<p id="text1">This is the first paragraph.</p>
+<button id="changeColorBtn1">Change Color 1</button>
+
+<p id="text2">This is the second paragraph.</p>
+<button id="changeColorBtn2">Change Color 2</button>
+
+<p id="text3">This is the third paragraph.</p>
+<button id="changeColorBtn3">Change Color 3</button>
+
+<script>
+    $(document).ready(function() {
+        $('#changeColorBtn1').click(function() {
+            $('#text1').css('color', 'red'); // Change color of the first paragraph
+        });
+        
+        $('#changeColorBtn2').click(function() {
+            $('#text2').css('color', 'green'); // Change color of the second paragraph
+        });
+        
+        $('#changeColorBtn3').click(function() {
+            $('#text3').css('color', 'blue'); // Change color of the third paragraph
+        });
+    });
+</script>
+
+</body>
+</html>
