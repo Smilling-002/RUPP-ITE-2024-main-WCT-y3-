@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARIA Attributes Demo</title>
+</head>
+<body>
+    <h1>ARIA Attributes Proof</h1>
+
+    <div id="example" role="alert" aria-live="assertive" aria-label="Important Alert">
+        This is an alert message.
+    </div>
+
+    <button id="updateAlert">Trigger Alert</button>
+
+    <script>
+        const alertDiv = document.getElementById('example');
+        const button = document.getElementById('updateAlert');
+
+        button.addEventListener('click', () => {
+            alertDiv.textContent = 'Update to full name: Oeurn soknai';
+            alert(alertDiv.textContent);
+        });
+    </script>
+</body>
+</html>
